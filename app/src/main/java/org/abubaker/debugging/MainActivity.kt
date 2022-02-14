@@ -23,12 +23,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+
         // Inflate the activity_main.xml file
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         setContentView(mBinding.root)
 
+        // mBinding.helloWorld.text = getString(R.string.hello_message)
+
+
+
         // Log the message
-        logging()
+        // logging()
 
         // first()
 
@@ -63,7 +69,9 @@ class MainActivity : AppCompatActivity() {
 
         repeat(4) {
             // Log.d(TAG, "$denominator")
+            Thread.sleep(3)
             Log.v(TAG, "${numerator / denominator}")
+            mBinding.divisionTextview.setText("${numerator / denominator}")
             denominator--
         }
 
